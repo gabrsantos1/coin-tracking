@@ -87,7 +87,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Coin Market Cap App')),
+      appBar: AppBar(title: Text('Cotação de Moedas')),
       body: Consumer<CryptoListViewModel>(
         builder: (context, viewModel, child) {
           return Column(
@@ -115,7 +115,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                         viewModel.setSearchSymbols(_searchController.text);
                         viewModel.fetchCryptoCurrencies();
                       },
-                      child: Text('Buscar/Atualizar'),
+                      child: Text('Buscar ou Atualizar'),
                     ),
                   ],
                 ),

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => CryptoListViewModel())],
       child: MaterialApp(
-        title: 'Coin Market Cap App',
+        title: 'Cotação das Moedas',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,

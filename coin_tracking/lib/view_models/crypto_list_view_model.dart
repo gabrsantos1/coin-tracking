@@ -37,8 +37,7 @@ class CryptoListViewModel extends ChangeNotifier {
 
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.none) {
-      _errorMessage =
-          'Sem conexão com a internet. Verifique sua conexão e tente novamente.';
+      _errorMessage = 'Sem conexão com a internet.';
       _isLoading = false;
       notifyListeners();
       return;

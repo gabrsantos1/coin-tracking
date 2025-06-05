@@ -14,7 +14,7 @@ class CoinMarketCapService {
   Future<List<CryptoCurrency>> getCryptoCurrencies({
     String symbols = defaultSymbols,
   }) async {
-    final uri = Uri.parse('$_baseUrl?symbol=$symbols&convert=USD,BRL');
+    final uri = Uri.parse('$_baseUrl?symbol=$symbols&convert=USD');
 
     final response = await http.get(
       uri,
