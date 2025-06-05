@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:coin_tracking/view_models/crypto_list_view_model.dart';
-import 'package:coin_tracking/views/crypto_list_screen.dart';
+import 'package:coin_tracking/view_models/cryptoListVM.dart';
+import 'package:coin_tracking/views/cryptoListHM.dart';
 
 void main() {
   runApp(MyApp());

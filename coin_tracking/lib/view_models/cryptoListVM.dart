@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:coin_tracking/models/crypto_currency.dart';
-import 'package:coin_tracking/services/coin_market_cap_service.dart';
+import 'package:coin_tracking/services/coinmkt_service.dart';
 
 class CryptoListViewModel extends ChangeNotifier {
   final CoinMarketCapService _service = CoinMarketCapService();
