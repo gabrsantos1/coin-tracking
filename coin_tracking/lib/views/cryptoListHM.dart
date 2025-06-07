@@ -39,13 +39,6 @@ class CryptoDetailBottomSheet extends StatelessWidget {
             style: TextStyle(fontSize: 16),
           ),
           SizedBox(height: 16),
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text('Fechar'),
-            ),
-          ),
         ],
       ),
     );
@@ -87,7 +80,14 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Cotação de Moedas')),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 194, 209, 190),
+        centerTitle: true,
+        title: Text(
+          'Cotação de Moedas',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Consumer<CryptoListViewModel>(
         builder: (context, viewModel, child) {
           return Column(
@@ -100,8 +100,20 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                       child: TextField(
                         controller: _searchController,
                         decoration: InputDecoration(
-                          labelText: 'Símbolos (ex: BTC,ETH,SOL)',
-                          border: OutlineInputBorder(),
+                          labelText: 'Símbolos (BTC,ETH,SOL)',
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(
+                              color: const Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: const BorderSide(
+                              color: Color.fromARGB(255, 9, 88, 27),
+                              width: 2,
+                            ),
+                          ),
                         ),
                         onSubmitted: (value) {
                           viewModel.setSearchSymbols(value);
@@ -115,6 +127,27 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                         viewModel.setSearchSymbols(_searchController.text);
                         viewModel.fetchCryptoCurrencies();
                       },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(
+                          255,
+                          242,
+                          255,
+                          242,
+                        ),
+                        foregroundColor: const Color.fromARGB(255, 6, 46, 12),
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 14,
+                        ),
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
                       child: Text('Buscar ou Atualizar'),
                     ),
                   ],
@@ -186,8 +219,8 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('USD: ${crypto.formattedPriceUsd}'),
                                       Text('BRL: ${crypto.formattedPriceBrl}'),
+                                      Text('USD: ${crypto.formattedPriceUsd}'),
                                     ],
                                   ),
                                   trailing: Column(

@@ -13,10 +13,12 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => CryptoListViewModel())],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Cotação das Moedas',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          scaffoldBackgroundColor: Color.fromARGB(255, 209, 223, 205),
         ),
         home: CryptoListScreen(),
       ),
