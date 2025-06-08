@@ -44,6 +44,7 @@ A proposta é aplicar conceitos de arquitetura MVVM, gerenciamento de estado, co
     │   └─cryptoListVM.dart
     │   └───view_models
     │   └─cryptoListHM.dart
+    └───main.dart
 
 ```
 
